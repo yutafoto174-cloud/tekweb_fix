@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Update Data Barang - KMK Undiksha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <div class="header">
+    <img src="images/logo-kmk.png" alt="Logo KMK Undiksha" />
+    <div>
+      <h1>Selamat Datang</h1>
+      <p>Laman update data inventaris KMK Undiksha</p>
+    </div>
+  </div>
+
+  <!-- ===== LAYOUT 2 KOLOM: menu kiri, form kanan ===== -->
+  <table class="layout">
+    <tr>
+
+      <!-- KOLOM KIRI: menu navigasi -->
+      <td class="menu-col">
+        <h3>Menu</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Data Barang</a></li>
+          <li><a href="update-barang.html">Update Barang</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </td>
+
+      <!-- KOLOM KANAN: judul + form + daftar barang -->
+      <td>
+        <h2>Update Data Barang</h2>
+
+        <!-- id="form-barang" dipakai script.js untuk menangkap event submit -->
+        <form id="form-barang" action="#" method="post">
+
+          <!-- Kotak pesan error, defaultnya hidden (disembunyikan lewat class .hidden) -->
+          <p id="pesan-error" class="hidden" style="color:#b00020; font-weight:bold;"></p>
+
+          <table class="form-table">
+            <tr>
+              <td class="label-col">Kode Barang</td>
+              <td>:</td>
+              <td><input type="text" name="kode_barang" placeholder="Tuliskan Kode Barang" /></td>
+            </tr>
+            <tr>
+              <td class="label-col">Nama Barang</td>
+              <td>:</td>
+              <td><input type="text" name="nama_barang" placeholder="cth: Gitar, Kitab Suci, Salib Altar" /></td>
+            </tr>
+            <tr>
+              <td class="label-col">Jumlah</td>
+              <td>:</td>
+              <td><input type="number" name="jumlah" placeholder="Tuliskan Jumlah" min="0" /></td>
+            </tr>
+            <tr>
+              <td class="label-col">Kondisi Barang</td>
+              <td>:</td>
+              <td>
+                <input type="radio" id="kd1" name="kondisi" value="Baik" checked />
+                <label for="kd1">Baik</label>
+                <input type="radio" id="kd2" name="kondisi" value="Perlu Perbaikan" />
+                <label for="kd2">Perlu Perbaikan</label>
+                <input type="radio" id="kd3" name="kondisi" value="Rusak" />
+                <label for="kd3">Rusak</label>
+              </td>
+            </tr>
+            <tr>
+              <td class="label-col">Kategori</td>
+              <td>:</td>
+              <td>
+                <input type="checkbox" id="kat1" name="kategori[]" value="Perlengkapan Liturgi" />
+                <label for="kat1">Perlengkapan Liturgi</label><br />
+                <input type="checkbox" id="kat2" name="kategori[]" value="Alat Musik" />
+                <label for="kat2">Alat Musik</label>
+                <input type="checkbox" id="kat3" name="kategori[]" value="Perlengkapan Acara" />
+                <label for="kat3">Perlengkapan Acara</label>
+                <input type="checkbox" id="kat4" name="kategori[]" value="Elektronik" />
+                <label for="kat4">Elektronik</label>
+              </td>
+            </tr>
+            <tr>
+              <td class="label-col">Lokasi Simpan</td>
+              <td>:</td>
+              <td>
+                <select name="lokasi">
+                  <option value="Sekretariat KMK" selected>Sekretariat KMK</option>
+                  <option value="Gudang">Gudang</option>
+                  <option value="Ruang Doa">Ruang Doa</option>
+                  <option value="Aula">Aula</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="label-col" style="vertical-align:top;">Keterangan</td>
+              <td style="vertical-align:top;">:</td>
+              <td><textarea name="keterangan" placeholder="cth: dipinjam untuk misa/retret, dll"></textarea></td>
+            </tr>
+            <tr>
+              <td colspan="2"></td>
+              <td><button type="submit" class="btn-simpan">Simpan</button></td>
+            </tr>
+          </table>
+        </form>
+
+        <!-- ===== Daftar barang yang sudah disimpan lewat JavaScript ===== -->
+        <h3 style="margin-top:30px;">Daftar Barang Tersimpan</h3>
+        <table class="list-table">
+          <thead>
+            <tr>
+              <th>Kode</th><th>Nama</th><th>Jumlah</th><th>Kondisi</th><th>Kategori</th><th>Lokasi</th><th>Aksi</th>
+            </tr>
+          </thead>
+          <!-- tbody ini diisi otomatis oleh script.js, bukan ditulis manual -->
+          <tbody id="tbody-barang">
+            <tr><td colspan="7" style="text-align:center; color:#777;">Belum ada data barang</td></tr>
+          </tbody>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">Copyright &copy; KMK Undiksha</div>
+
+  <!-- File JavaScript diletakkan sebelum </body> supaya HTML sudah termuat penuh lebih dulu -->
+  <script src="script.js"></script>
+</body>
+</html>

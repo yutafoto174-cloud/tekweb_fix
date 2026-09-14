@@ -1,0 +1,173 @@
+/* ============================================================
+   RESET DASAR
+   ============================================================ */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* ============================================================
+   HEADER (kop biru-teal berisi logo + judul)
+   Dipakai di index.html DAN update-barang.html
+   ============================================================ */
+.header {
+  background-color: #a9d3d6;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.header img {
+  height: 55px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #1a1a1a;
+}
+.header p {
+  margin: 2px 0 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* ============================================================
+   LAYOUT UTAMA 2 KOLOM (menu kiri, konten kanan)
+   Dipakai khusus di update-barang.html
+   ============================================================ */
+.layout {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+.layout td {
+  vertical-align: top;
+  padding: 20px;
+}
+.menu-col {
+  width: 160px;
+  border-right: 1px solid #ddd;
+  background-color: #fafafa;
+}
+.menu-col h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+.menu-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-col li {
+  margin-bottom: 12px;
+}
+.menu-col a {
+  color: #0645ad;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   TABEL FORM BARANG
+   ============================================================ */
+.form-table td {
+  padding: 6px 8px;
+  vertical-align: middle;
+}
+.form-table .label-col {
+  width: 130px;
+  font-weight: normal;
+}
+.form-table input[type="text"],
+.form-table input[type="number"],
+.form-table select,
+.form-table textarea {
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  width: 260px;
+}
+.form-table textarea {
+  height: 80px;
+}
+
+.btn-simpan {
+  background-color: #cfeeee;
+  border: 1px solid #9bcaca;
+  padding: 6px 20px;
+  cursor: pointer;
+}
+.btn-simpan:hover {
+  background-color: #b5e0e0;
+}
+
+/* ============================================================
+   HALAMAN WELCOME (index.html)
+   ============================================================ */
+.welcome-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 40px;
+}
+.welcome-content img {
+  width: 160px;
+}
+.welcome-content h2 {
+  margin-top: 0;
+}
+.btn-update {
+  background-color: #cfeeee;
+  border: 1px solid #9bcaca;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #1a1a1a;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+/* ============================================================
+   TABEL DAFTAR BARANG (hasil render JavaScript, script.js)
+   ============================================================ */
+.list-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+.list-table th,
+.list-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-size: 14px;
+}
+.list-table th {
+  background-color: #eef7f7;
+}
+.btn-hapus {
+  background-color: #f8d7da;
+  border: 1px solid #f1a8ae;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.btn-hapus:hover {
+  background-color: #f3b6bb;
+}
+
+/* Dipakai script.js untuk sembunyikan/menampilkan pesan error */
+.hidden {
+  display: none;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  background-color: #0d1b2a;
+  color: #ffffff;
+  text-align: center;
+  padding: 12px;
+  font-size: 13px;
+}
